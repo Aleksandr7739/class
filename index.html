@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Person {
+            constructor(name, surname, age, gender) {
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.gender = gender;
+                this.rename = function (newName) {
+                    console.log(newName)
+                }
+            }
+
+        }
+
+        class Admin extends Person {
+            constructor(name, surname, age, gender, role, id) {
+                super(name, surname, age, gender);
+                this.role = role;
+                this.id = id;
+            }
+
+        }
+
+        class Client extends Person {
+            constructor(name, surname, age, gender, sale) {
+                super(name, surname, age, gender);
+                this.sale = sale;
+            }
+        }
+
+        let man = new Person('Михаил', 'Петров', 25, 'мужской');
+        let women = new Person('Елена', 'Сорокина', 30, 'женский');
+        let adm = new Admin('Виктор', 'Иванов', 29, 'мужской', 'системный администратор', 999);
+        let saler = new Client('Дмитрий', 'Сидоров', 45, 'мужской', 'продавец');
+        console.log(man)
+        console.log(women)
+        console.log(adm)
+        console.log(saler)
+
+
+    </script>
+
+</body>
+
+</html>
